@@ -1,60 +1,53 @@
-
-const testString = '';
-const maxSize = 8;
-
-
-const checkLength = function(inputLine, sizeLine) {
+function checkLength(inputLine, sizeLine) {
   if (inputLine.length > sizeLine) {
     return false;
   }
 
   return true;
-};
+}
 
-let checkPolindrom = function(inputLine) {
-  let reverseLine = inputLine.split('').reverse('').join('');
+checkLength('проверяемая строка', 18);
+
+function checkPolindrom(inputLine) {
+  const reverseLine = inputLine.split('').reverse('').join('');
 
   return inputLine.toLowerCase() === reverseLine.toLowerCase() ;
-};
+}
 
+checkPolindrom('ДовОд');
 
-let takeNember = function(inputLine) {
+function takeNumber(inputLine) {
   let num = '';
 
   for (let i = 0; i <= inputLine.length - 1; i++) {
     for (let j = 0; j < 10; j++) {
-      if (inputLine[i] == j) {
+      if (inputLine[i] === j) {
         num += inputLine[i];
-      };
-    };
-  };
-
-  return Number(num);
-};
-/*
-1. Добавит в новую строку inputLine
-2. Взять взять строку по символьно plusSymbol и добовлять пока она не добьется до значения minLenght
-*/
-
-/*
-1. Выполнить цикл пока длинна новой строки, не ровна указаной длинне строки без учета 1 значения
-2.
-*/
-
-let createStr = function(inputLine, minLength, plusSymbol) {
-  let newString = '';
-  let counter = 0;
-
-  while (newString.length !== minLength - inputLine.length) {
-    if (counter === plusSymbol.length) {
-      counter = 0;
+      }
     }
-
-    newString += plusSymbol[counter];
-
-    counter++;
   }
 
-  newString = newString + inputLine;
-  return newString;
-};
+  return Number(num);
+}
+
+takeNumber('ECMAScript 2022');
+
+
+function padStart(str, minLength, padString) {
+  if (str.length >= minLength) {
+    return str;
+  }
+
+  const diff = minLength - str.length;
+  let paddedStr = '';
+
+  while (paddedStr.length < diff) {
+    paddedStr += padString;
+  }
+
+  paddedStr = paddedStr.substring(0, diff);
+
+  return paddedStr + str;
+}
+
+padStart('1', 2, '0');
