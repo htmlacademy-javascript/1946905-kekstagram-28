@@ -1,5 +1,5 @@
 
-function generateObjectArray() {
+function generatePosts() {
   const objectArray = [];
 
   for(let i = 0; i <= 25; i++) {
@@ -8,43 +8,43 @@ function generateObjectArray() {
       url: `photos/${i}.jpg`,
       description: `Я тут был ${i} раз!`,
       likes: getRandomInteger(15, 200),
-      comments: generateComment(),
+      comments: generateComments(),
     };
     objectArray.push(crtImage);
   }
   return objectArray;
 }
 
-function generateComment() {
-  const objectComment = [];
-
+function generateComments() {
+  const comments = [];
+  const СommentExamples = [
+    'Всё отлично!','В целом всё неплохо. Но не всё.',
+    'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
+    'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
+    'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
+    'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.'
+  ];
   for (let i = 0; i <= 6; i++) {
 
-    const arrayComment = [
-      'Всё отлично!','В целом всё неплохо. Но не всё.',
-      'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
-      'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
-      'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
-      'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.'
-    ];
+    const nameExamples = ['Артем', 'Никита', 'Сергей', 'Филлип', 'Влад'];
 
-    const arrayName = ['Артем', 'Никита', 'Сергей', 'Филлип', 'Влад'];
-
-    const crtComment = {
+    const comment = {
       id: i,
       avatar: `img/avatar-${i}.svg`,
-      message: arrayComment[getRandomInteger(0, arrayComment.length - 1)],
-      name: arrayName[getRandomInteger(0, arrayName.length - 1)],
+      message: СommentExamples[getRandomInteger(0, СommentExamples.length - 1)],
+      name: nameExamples[getRandomInteger(0, nameExamples.length - 1)],
     };
-    objectComment.push(crtComment);
+    comments.push(comment);
   }
-  return objectComment;
+  return comments;
 }
 
-function getRandomInteger (min, max) {
-  const lower = Math.ceil(Math.min(Math.abs(min), Math.abs(max)));
-  const upper = Math.floor(Math.max(Math.abs(min), Math.abs(max)));
-  const result = Math.random() * (upper - lower + 1) + lower;
+function getRandomInteger (minInt, maxInt) {
+  const lower = Math.ceil(Math.min(Math.abs(minInt), Math.abs(maxInt)));
+  const upper = Math.floor(Math.max(Math.abs(minInt), Math.abs(maxInt)));
+  const result = Math.floor(Math.random() * (upper - lower + 1) + lower);
 
-  return Math.floor(result);
+  return result;
 }
+
+generatePosts();
