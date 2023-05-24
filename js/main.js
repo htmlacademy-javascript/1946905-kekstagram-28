@@ -1,3 +1,3 @@
-import {generatePosts} from './data.js';
+import { generatePosts } from './data.js';
 
 generatePosts();

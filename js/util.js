@@ -31,4 +31,4 @@ function getRandomInteger (minInt, maxInt) {
 }
 
 
-export {getRandomInteger, generateComments};
+export { getRandomInteger, generateComments };
