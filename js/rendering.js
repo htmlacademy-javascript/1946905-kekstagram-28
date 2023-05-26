@@ -14,9 +14,9 @@ for(let i = 0; i < dataList.length; i++) {
   const element = pictureItem.cloneNode(true);
   element.classList.add('picture');
 
-  const pictureImg = pictureItem.querySelector('.picture__img');
-  const pictureComment = pictureItem.querySelector('.picture__comments');
-  const pictureLike = pictureItem.querySelector('.picture__likes');
+  const pictureImg = element.querySelector('.picture__img');
+  const pictureComment = element.querySelector('.picture__comments');
+  const pictureLike = element.querySelector('.picture__likes');
 
   pictureImg.src = dataList[i].url;
   pictureComment.textContent = dataList[i].comments;
