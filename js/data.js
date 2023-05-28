@@ -1,4 +1,4 @@
-import {getRandomInteger, generateComments} from './util.js';
+import { getRandomInteger, generateComments } from './util.js';
 
 
 function generatePosts() {
@@ -18,4 +18,4 @@ function generatePosts() {
 }
 
 
-export {generatePosts};
+export { generatePosts };

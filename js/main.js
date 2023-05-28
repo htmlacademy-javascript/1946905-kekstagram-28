@@ -1,3 +1,6 @@
-import {generatePosts} from './data.js';
+import { fillingСards } from './rendering.js';
 
-generatePosts();
+const pictures = document.querySelector('.pictures');
+
+pictures.appendChild(fillingСards());
+console.log(pictures);
