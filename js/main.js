@@ -2,5 +2,5 @@ import { fillingСards } from './rendering.js';
 
 const pictures = document.querySelector('.pictures');
 
-pictures.appendChild(fillingСards);
-
+pictures.appendChild(fillingСards());
+console.log(pictures);
