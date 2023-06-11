@@ -1,6 +1,4 @@
-import { fillingСards } from './rendering.js';
+import './rendering.js';
+import './popup.js';
+import './rejectingFullMode.js';
 
-const pictures = document.querySelector('.pictures');
-
-pictures.appendChild(fillingСards());
-console.log(pictures);

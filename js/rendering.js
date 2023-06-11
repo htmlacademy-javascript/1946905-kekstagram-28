@@ -1,4 +1,4 @@
-import { generatePosts } from './data.js';
+import { dataList } from './data.js';
 
 const pictureContainer = document.querySelector('#picture').content;
 
@@ -6,7 +6,7 @@ const pictureItem = pictureContainer.querySelector('.picture');
 
 const fragment = document.createDocumentFragment();
 
-const dataList = generatePosts();
+const pictures = document.querySelector('.pictures');
 
 
 function fillingСards() {
@@ -19,11 +19,12 @@ function fillingСards() {
     const pictureLike = element.querySelector('.picture__likes');
 
     pictureImg.src = dataList[i].url;
-    pictureComment.textContent = dataList[i].comments;
+    pictureComment.textContent = dataList[i].comments.length;
     pictureLike.textContent = dataList[i].likes;
     fragment.appendChild(element);
   }
   return fragment;
 }
 
-export { fillingСards };
+pictures.appendChild(fillingСards());
+
