@@ -1,3 +1,6 @@
-import {generatePosts} from './data.js';
+import './rendering.js';
+import './popup.js';
+import './fillPopup.js';
+import './renderingComments.js';
 
-generatePosts();
+
