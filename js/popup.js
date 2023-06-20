@@ -1,21 +1,22 @@
 import { isEscapeKey } from './util.js';
+import { FULL_MODE, CANCEL_FULL_MODE, PICTURES_CONTAINER, BODY_DOCUMENT } from './constants.js';
 
-const fullScreenMode = document.querySelector('.big-picture');
 
-const exitFullScreenMode = fullScreenMode.querySelector('.big-picture__cancel');
-
-const photoCards = document.querySelectorAll('.pictures .picture');
+const pictureCards = PICTURES_CONTAINER.querySelectorAll('.picture');
 
 
 const removeClassHidden = function() {
-  fullScreenMode.classList.remove('hidden');
+  FULL_MODE.classList.remove('hidden');
   document.addEventListener('keydown', onDocumentKeyDown);
+  BODY_DOCUMENT.classList.add('modal-open');
 };
 
 const addClassHidden = function() {
-  fullScreenMode.classList.add('hidden');
+  FULL_MODE.classList.add('hidden');
   document.removeEventListener('keydown', onDocumentKeyDown);
+  BODY_DOCUMENT.classList.remove('modal-open');
 };
+
 
 function onDocumentKeyDown(evt) {
   if (isEscapeKey(evt)) {
@@ -25,10 +26,8 @@ function onDocumentKeyDown(evt) {
 }
 
 
-for (let i = 0; i < photoCards.length; i++) {
-  photoCards[i].addEventListener('click', removeClassHidden);
+for (let i = 0; i < pictureCards.length; i++) {
+  pictureCards[i].addEventListener('click', removeClassHidden);
 }
-exitFullScreenMode.addEventListener('click', addClassHidden);
+CANCEL_FULL_MODE.addEventListener('click', addClassHidden);
 
-
-export { photoCards };

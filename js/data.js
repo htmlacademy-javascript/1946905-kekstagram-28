@@ -1,7 +1,5 @@
 import { getRandomInteger, generateComments } from './util.js';
 
-// const commentsArray = generateComments();
-
 function generatePosts() {
   const objectArray = [];
 
@@ -18,6 +16,5 @@ function generatePosts() {
   return objectArray;
 }
 
-const dataList = generatePosts();
 
-export { dataList };
+export { generatePosts };

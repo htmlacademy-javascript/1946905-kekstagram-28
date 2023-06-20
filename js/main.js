@@ -1,4 +1,6 @@
 import './rendering.js';
 import './popup.js';
-import './rejectingFullMode.js';
+import './fillPopup.js';
+import './renderingComments.js';
+
 
